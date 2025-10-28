@@ -474,7 +474,7 @@
   (interactive)
   (taskwarrior--change-date "until"))
 
-(define-transient-command taskwarrior-date ()
+(transient-define-prefix taskwarrior-date ()
   "Edit date on task"
   [["Date"
     ("d" "Due"       taskwarrior-set-due)
