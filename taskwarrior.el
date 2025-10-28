@@ -233,8 +233,9 @@
 (defun taskwarrior--shell-command (command &optional filter modifications miscellaneous confirm)
   "Run a taskwarrior COMMAND with specified FILTER MODIFICATIONS MISCELLANEOUS CONFIRM."
   (let* ((confirmation (if confirm (concat "echo " confirm " |") ""))
-	 (cmd (format "%s task %s %s %s %s"
+	 (cmd (format "%s %s %s %s %s %s"
 		      (or confirmation "")
+		      (or taskwarrior-default-command "task")
 		      (or filter "")
 		      (or command "")
 		      (or modifications "")
